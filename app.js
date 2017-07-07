@@ -21,10 +21,6 @@
             messageHere ="Please enter data first";
           }
 
-          if (foodItems == null || foodItems == "" ) {
-            messageHere ="Please enter data first";
-          }
-
            if (arrayOfStrings.length <= 3 && arrayOfStrings.length > 0 && foodItems != "") {
             messageHere ="Enjoy";
           }
