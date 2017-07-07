@@ -15,17 +15,21 @@
         var separator = ",";
         var messageHere = "";
           var foodItems = $scope.lunchItems;
-          var arrayOfStrings = foodItems.split(separator);
+          if (foodItems != undefined) {
+                var arrayOfStrings = foodItems.split(separator);
+          }
 
-          if (foodItems == null || foodItems == "" ) {
+          if (foodItems == null || foodItems == "" || foodItems == undefined ) {
             messageHere ="Please enter data first";
+            $scope.message = messageHere;
+            return;
           }
 
            if (arrayOfStrings.length <= 3 && arrayOfStrings.length > 0 && foodItems != "") {
             messageHere ="Enjoy";
           }
 
-          if (arrayOfStrings.length > 5) {
+          if (arrayOfStrings.length > 3) {
             messageHere = "Too much!";
           }
 
