@@ -1,6 +1,31 @@
-<html>
-<body>
-Hello World!I'm learning the angular
-from coursera.com
-</body>
+<html ng-app = "shoppingListApp">
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+
+    <h1> My First Angular App </h1>
+  Hello World!
+  Lets learn Angular.
+
+    <div ng-controller = "ShoppingListAddCtrl as itemAdder">
+        
+        <input type="text" ng-model="itemAdder.itemName" placeholder="item name" >
+		<input type="text" ng-model="itemAdder.itemQuantity" placeholder="item Quantity" >
+		<button ng-click = "itemAdder.addItem()" > Add item to shopping list </button>
+    </div>
+
+	   <div ng-controller = "ShoppingListShowCtrl as showList">
+			<ol>
+				<li ng-repeat = "item in showList.items"> 
+				{{item.quantity}} of {{item.name}}
+				
+				<button ng-click = "showList.removeItem($index)"> remove Item </button>
+				</li>
+			</ol>
+	<!--<button ng-click = "showList.getItem()" > show shopping list </button>-->
+    </div>
+  </body>
 </html>
